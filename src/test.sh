@@ -1,11 +1,13 @@
-#!/bin/bash
+#! /bin/bash
 
-output=$(node -e "console.log(require('./src/app')('Test'))")
+#src/test.sh
+EXPECTED="Hello, Test!"
 
-if [ "$output" = "Hello, Test!" ]; then
-  echo "Test passed"
-  exit 0
+OUTPUT=$(node -e "console.log(require('./src/app')('Test'))")
+
+if [ "$OUTPUT" = "$EXPECTED" ]; then
+echo "Test passed!"
 else
-  echo "Test failed: expected 'Hello, Test!' but got '$output'"
-  exit 1
+echo "Test failed: expected '$EXPECTED' but got '$OUTPUT'"
+exit 1
 fi

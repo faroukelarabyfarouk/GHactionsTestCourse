@@ -1,7 +1,6 @@
 {
     "name": "simple-node-app",
     "version": "1.0.0",
-    "type": "module",
     "description": "A simple Node.js application",
     "main": "src/app.js",
     "scripts": {

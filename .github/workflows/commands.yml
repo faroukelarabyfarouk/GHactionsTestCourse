@@ -4,8 +4,10 @@ jobs:
   example:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-            deprecated=true
-            if [[ deprecated ]]; then
-              echo "::warning::Deprecated founded"
-            fi  
+    - name: Check if a file exists
+      run: |
+          if [ -f "config.yaml" ]; then
+            echo "::depug::config.yaml is exists"
+          else 
+            echo "::error::config.yaml is missing"
+          fi
